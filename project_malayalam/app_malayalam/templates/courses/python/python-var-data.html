@@ -1,0 +1,232 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- Course Header -->
+    <div class="full-bleed bg-gradient-to-r from-indigo-500 to-purple-600">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    Python For Future
+                </h1>
+                <p class="mt-3 max-w-md mx-auto text-base text-indigo-100 sm:text-lg md:mt-3 md:text-xl md:max-w-2xl">
+                    Master Python programming from basics to advanced concepts
+                </p>
+            </div>
+        </div>
+    </div>
+
+    {% include 'courses/python/python-base.html' %}
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Variables and Data Types in Python</h2>
+
+                    <div class="prose max-w-none">
+                        <h3>Understanding Variables</h3>
+                        <p>Variables are containers for storing data values. Unlike other languages, Python doesn't require explicit declaration of variables.</p>
+                        
+                        <div class="bg-gray-800 rounded-lg p-4 my-4 relative">
+                            <button class="absolute top-2 right-2 text-gray-300 hover:text-white copy-btn">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                            <pre class="text-green-400 overflow-x-auto"><code># Variable assignment examples
+                    name = "Alice"  # String
+                    age = 25        # Integer
+                    height = 5.9    # Float
+                    is_student = True  # Boolean</code></pre>
+                        </div>
+
+                        <div class="bg-blue-50 p-4 rounded-lg my-4 border-l-4 border-blue-400">
+                            <h4 class="font-medium text-blue-800">Variable Naming Rules</h4>
+                            <ul class="text-sm text-blue-700 mt-2 space-y-1">
+                                <li>Must start with a letter or underscore (_)</li>
+                                <li>Can only contain letters, numbers, and underscores</li>
+                                <li>Case-sensitive (<code>age</code> and <code>Age</code> are different)</li>
+                                <li>Cannot be a Python keyword (<code>if</code>, <code>for</code>, etc.)</li>
+                            </ul>
+                        </div>
+
+                        <h3>Python Data Types</h3>
+                        <p>Python has various built-in data types:</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                                <h4 class="font-medium text-green-800">Basic Types</h4>
+                                <ul class="text-sm text-green-700 mt-2 space-y-1">
+                                    <li><strong>int</strong>: Integer numbers (3, -10, 0)</li>
+                                    <li><strong>float</strong>: Decimal numbers (3.14, -0.001)</li>
+                                    <li><strong>str</strong>: Text ('hello', "world")</li>
+                                    <li><strong>bool</strong>: Boolean (True, False)</li>
+                                </ul>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400">
+                                <h4 class="font-medium text-purple-800">Collection Types</h4>
+                                <ul class="text-sm text-purple-700 mt-2 space-y-1">
+                                    <li><strong>list</strong>: Ordered, mutable [1, 2, 3]</li>
+                                    <li><strong>tuple</strong>: Ordered, immutable (1, 2, 3)</li>
+                                    <li><strong>dict</strong>: Key-value pairs {'name': 'Alice'}</li>
+                                    <li><strong>set</strong>: Unordered, unique {1, 2, 3}</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3>Type Conversion</h3>
+                        <p>Python allows converting between different types:</p>
+                        
+                        <div class="bg-gray-800 rounded-lg p-4 my-4 relative">
+                            <button class="absolute top-2 right-2 text-gray-300 hover:text-white copy-btn">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                            <pre class="text-green-400 overflow-x-auto"><code># Type conversion examples
+                    num_str = "123"
+                    num_int = int(num_str)  # Convert to integer
+                    num_float = float(num_str)  # Convert to float
+
+                    price = 19.99
+                    price_str = str(price)  # Convert to string
+
+                    is_valid = 1
+                    bool_valid = bool(is_valid)  # Convert to boolean (True)</code></pre>
+                        </div>
+
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-lightbulb text-yellow-500 mt-1"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="text-sm font-medium text-yellow-800">Dynamic Typing Tip</h4>
+                                    <p class="text-sm text-yellow-700 mt-1">
+                                        Python uses dynamic typing - variables can change type. Use <code>type()</code> to check a variable's type: 
+                                        <code class="bg-yellow-100 px-1 py-0.5 rounded">print(type(age))</code>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Practical Examples</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+                            <div class="border rounded-lg p-4 hover:bg-gray-50 transition">
+                                <h4 class="font-medium text-gray-900">User Information</h4>
+                                <div class="bg-gray-100 p-3 rounded mt-2">
+                                    <pre class="text-sm"><code>name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+print(f"Hello {name}, \
+you are {age} years old!")</code></pre>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg p-4 hover:bg-gray-50 transition">
+                                <h4 class="font-medium text-gray-900">Temperature Converter</h4>
+                                <div class="bg-gray-100 p-3 rounded mt-2">
+                                    <pre class="text-sm"><code>celsius = 37.5
+fahrenheit = (celsius * 9/5) + 32
+print(f"{celsius}°C = {fahrenheit}°F")</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 bg-gray-50 p-4 rounded-lg border">
+                            <h4 class="font-medium text-gray-900">Practice Exercise</h4>
+                            <p class="text-sm text-gray-600 mt-1">Create a program that:</p>
+                            <ol class="text-sm text-gray-600 list-decimal pl-5 mt-1 space-y-1">
+                                <li>Takes two numbers as input</li>
+                                <li>Converts them to integers</li>
+                                <li>Calculates and prints their sum, difference, product, and quotient</li>
+                            </ol>
+                            <button class="mt-4 w-full md:w-auto px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition">
+                                Try It Yourself
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="full-bleed bg-indigo-700">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center">
+            <div class="lg:w-0 lg:flex-1">
+                <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                    Want more Python tutorials?
+                </h2>
+                <p class="mt-3 max-w-3xl text-lg leading-6 text-indigo-200">
+                    Sign up for our newsletter to get notified about new content.
+                </p>
+            </div>
+            <div class="mt-8 lg:mt-0 lg:ml-8">
+                <form class="sm:flex">
+                    <label for="email-address" class="sr-only">Email address</label>
+                    <input id="email-address" name="email-address" type="email" autocomplete="email" required class="w-full px-5 py-3 border border-transparent placeholder-gray-500 focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white focus:border-white sm:max-w-xs rounded-md" placeholder="Enter your email">
+                    <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                        <button type="submit" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white">
+                            Subscribe
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.accordion-group button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Toggle content visibility
+                content.classList.toggle('hidden');
+                
+                // Rotate icon
+                icon.classList.toggle('rotate-180');
+                
+                // Close other open accordions
+                document.querySelectorAll('.accordion-group button').forEach(otherButton => {
+                    if (otherButton !== button) {
+                        otherButton.nextElementSibling.classList.add('hidden');
+                        otherButton.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+        
+        // Copy code functionality
+        document.querySelectorAll('button i.fa-copy').forEach(icon => {
+            icon.addEventListener('click', () => {
+                const codeBlock = icon.closest('button').nextElementSibling;
+                const code = codeBlock.textContent;
+                
+                navigator.clipboard.writeText(code).then(() => {
+                    icon.classList.remove('fa-copy');
+                    icon.classList.add('fa-check');
+                    
+                    setTimeout(() => {
+                        icon.classList.remove('fa-check');
+                        icon.classList.add('fa-copy');
+                    }, 2000);
+                });
+            });
+        });
+
+        // Auto-expand first module
+        document.querySelector('.accordion-group button').click();
+    </script>
+
+    <script>
+        // Copy button functionality
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const codeBlock = btn.parentElement.querySelector('code');
+                const code = codeBlock.textContent;
+                
+                navigator.clipboard.writeText(code).then(() => {
+                    btn.innerHTML = '<i class="fas fa-check"></i>';
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fas fa-copy"></i>';
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+
+{% endblock %}
